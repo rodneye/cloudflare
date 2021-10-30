@@ -16,7 +16,7 @@ terraform {
 # }
 
 provider "cloudflare" { 
-  email      = "rodney-ellis@hotmail.com"
+  email      = var.email
   api_token    = var.api_token
   account_id = var.account_id
 }
