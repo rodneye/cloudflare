@@ -9,12 +9,6 @@ terraform {
   }
 }
 
-# provider "cloudflare" { 
-#   email      = "rodney-ellis@hotmail.com"
-#   api_token    = "9xEPJc3n5rWYZt2ipd9FjJmqZolRx7nAPOAMT8U1"
-#   account_id = "9bd87d8885fd18a6ce96e4104547bcfd"
-# }
-
 provider "cloudflare" { 
   email      = var.email
   api_token    = var.api_token
@@ -22,25 +16,33 @@ provider "cloudflare" {
 }
 
 
-# provider "cloudflare" {
-# #  version    = "~> 2.0"
-#   email      = "rodney-ellis@hotmail.com"
-#   api_token    = "9xEPJc3n5rWYZt2ipd9FjJmqZolRx7nAPOAMT8U1"
-#   account_id = "9bd87d8885fd18a6ce96e4104547bcfd"
-# }
-
 # Create a records
-resource "cloudflare_record" "Router" {
-  zone_id = "70182c792b1a781051a72acfe20d5450"
-  name    = "router"
-  value   = "192.168.88.150"
-  type    = "A"
-}
-
 resource "cloudflare_record" "alertmanager" {
   zone_id = "70182c792b1a781051a72acfe20d5450"
   name    = "alertmanager"
   value   = "192.168.88.150"
+  type    = "A"
+}
+
+resource "cloudflare_record" "blog" {
+  zone_id = "70182c792b1a781051a72acfe20d5450"
+  name    = "blog"
+  value   = "192.168.88.150"
+  type    = "A"
+}
+
+resource "cloudflare_record" "cadvisor" {
+  zone_id = "70182c792b1a781051a72acfe20d5450"
+  name    = "cadvisor"
+  value   = "192.168.88.150"
+  type    = "A"
+}
+
+
+resource "cloudflare_record" "duplicati-media" {
+  zone_id = "70182c792b1a781051a72acfe20d5450"
+  name    = "duplicati-media"
+  value   = "192.168.88.46"
   type    = "A"
 }
 
@@ -65,16 +67,16 @@ resource "cloudflare_record" "home" {
   type    = "A"
 }
 
-resource "cloudflare_record" "minio" {
+resource "cloudflare_record" "jackett" {
   zone_id = "70182c792b1a781051a72acfe20d5450"
-  name    = "minio"
+  name    = "jackett"
   value   = "192.168.88.150"
   type    = "A"
 }
 
-resource "cloudflare_record" "terraform" {
+resource "cloudflare_record" "minio" {
   zone_id = "70182c792b1a781051a72acfe20d5450"
-  name    = "terraform"
+  name    = "minio"
   value   = "192.168.88.150"
   type    = "A"
 }
@@ -107,6 +109,13 @@ resource "cloudflare_record" "pihole" {
   type    = "A"
 }
 
+resource "cloudflare_record" "plex" {
+  zone_id = "70182c792b1a781051a72acfe20d5450"
+  name    = "plex"
+  value   = "192.168.88.150"
+  type    = "A"
+}
+
 resource "cloudflare_record" "portainer" {
   zone_id = "70182c792b1a781051a72acfe20d5450"
   name    = "portainer"
@@ -124,6 +133,34 @@ resource "cloudflare_record" "prometheus" {
 resource "cloudflare_record" "qbittorrent" {
   zone_id = "70182c792b1a781051a72acfe20d5450"
   name    = "qbittorrent"
+  value   = "192.168.88.150"
+  type    = "A"
+}
+
+resource "cloudflare_record" "radar" {
+  zone_id = "70182c792b1a781051a72acfe20d5450"
+  name    = "radar"
+  value   = "192.168.88.150"
+  type    = "A"
+}
+
+resource "cloudflare_record" "registry" {
+  zone_id = "70182c792b1a781051a72acfe20d5450"
+  name    = "registry"
+  value   = "192.168.88.150"
+  type    = "A"
+}
+
+resource "cloudflare_record" "Router" {
+  zone_id = "70182c792b1a781051a72acfe20d5450"
+  name    = "router"
+  value   = "192.168.88.150"
+  type    = "A"
+}
+
+resource "cloudflare_record" "smokeping" {
+  zone_id = "70182c792b1a781051a72acfe20d5450"
+  name    = "smokeping"
   value   = "192.168.88.150"
   type    = "A"
 }
@@ -149,6 +186,13 @@ resource "cloudflare_record" "tautulli" {
   type    = "A"
 }
 
+resource "cloudflare_record" "terraform" {
+  zone_id = "70182c792b1a781051a72acfe20d5450"
+  name    = "terraform"
+  value   = "192.168.88.150"
+  type    = "A"
+}
+
 resource "cloudflare_record" "unifi" {
   zone_id = "70182c792b1a781051a72acfe20d5450"
   name    = "unifi"
@@ -156,33 +200,12 @@ resource "cloudflare_record" "unifi" {
   type    = "A"
 }
 
-resource "cloudflare_record" "cadvisor" {
+resource "cloudflare_record" "vpn" {
   zone_id = "70182c792b1a781051a72acfe20d5450"
-  name    = "cadvisor"
-  value   = "192.168.88.150"
-  type    = "A"
+  name    = "vpn"
+  value   = "ellishome.co.za"
+  type    = "CNAME"
 }
-
-resource "cloudflare_record" "registry" {
-  zone_id = "70182c792b1a781051a72acfe20d5450"
-  name    = "registry"
-  value   = "192.168.88.150"
-  type    = "A"
-}
-
-resource "cloudflare_record" "smokeping" {
-  zone_id = "70182c792b1a781051a72acfe20d5450"
-  name    = "smokeping"
-  value   = "192.168.88.150"
-  type    = "A"
-}
-
-# resource "cloudflare_record" "vpn" {
-#   zone_id = "70182c792b1a781051a72acfe20d5450"
-#   name    = "vpn"
-#   value   = "ellishome.co.za"
-#   type    = "CNAME"
-# }
 
 resource "cloudflare_filter" "southafrica" {
   zone_id = "70182c792b1a781051a72acfe20d5450"
