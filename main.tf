@@ -158,13 +158,6 @@ resource "cloudflare_record" "Router" {
   type    = "A"
 }
 
-resource "cloudflare_record" "smokeping" {
-  zone_id = "70182c792b1a781051a72acfe20d5450"
-  name    = "smokeping"
-  value   = "192.168.88.150"
-  type    = "A"
-}
-
 resource "cloudflare_record" "solar" {
   zone_id = "70182c792b1a781051a72acfe20d5450"
   name    = "solar"
@@ -189,6 +182,20 @@ resource "cloudflare_record" "tautulli" {
 resource "cloudflare_record" "terraform" {
   zone_id = "70182c792b1a781051a72acfe20d5450"
   name    = "terraform"
+  value   = "192.168.88.150"
+  type    = "A"
+}
+
+resource "cloudflare_record" "tinker" {
+  zone_id = "70182c792b1a781051a72acfe20d5450"
+  name    = "tinker"
+  value   = "192.168.88.150"
+  type    = "A"
+}
+
+resource "cloudflare_record" "transmission" {
+  zone_id = "70182c792b1a781051a72acfe20d5450"
+  name    = "transmission"
   value   = "192.168.88.150"
   type    = "A"
 }
