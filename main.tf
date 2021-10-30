@@ -9,17 +9,17 @@ terraform {
   }
 }
 
-# provider "cloudflare" { 
-#   email      = "rodney-ellis@hotmail.com"
-#   api_token    = "9xEPJc3n5rWYZt2ipd9FjJmqZolRx7nAPOAMT8U1"
-#   account_id = "9bd87d8885fd18a6ce96e4104547bcfd"
-# }
-
 provider "cloudflare" { 
-  email      = var.email
-  api_token    = var.api_token
-  account_id = var.account_id
+  email      = "rodney-ellis@hotmail.com"
+  api_token    = "9xEPJc3n5rWYZt2ipd9FjJmqZolRx7nAPOAMT8U1"
+  account_id = "9bd87d8885fd18a6ce96e4104547bcfd"
 }
+
+# provider "cloudflare" { 
+#   email      = var.email
+#   api_token    = var.api_token
+#   account_id = var.account_id
+# }
 
 
 # provider "cloudflare" {
