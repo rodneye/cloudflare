@@ -214,13 +214,6 @@ resource "cloudflare_record" "vpn" {
   type    = "CNAME"
 }
 
-resource "cloudflare_record" "ivan" {
-  zone_id = "70182c792b1a781051a72acfe20d5450"
-  name    = "ivan"
-  value   = "192.168.88.150"
-  type    = "A"
-}
-
 
 # Firewall Rules
 resource "cloudflare_filter" "southafrica" {
