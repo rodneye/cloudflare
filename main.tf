@@ -218,7 +218,7 @@ resource "cloudflare_record" "swarm" {
   zone_id = "70182c792b1a781051a72acfe20d5450"
   name    = "swarm"
   value   = "192.168.88.150"
-  type    = "CNAME"
+  type    = "A"
 }
 
 
