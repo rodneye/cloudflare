@@ -235,6 +235,13 @@ resource "cloudflare_record" "jenkins" {
   type    = "A"
 }
 
+resource "cloudflare_record" "tdarr" {
+  zone_id = "70182c792b1a781051a72acfe20d5450"
+  name    = "tdarr"
+  value   = "192.168.88.150"
+  type    = "A"
+}
+
 
 # Firewall Rules
 resource "cloudflare_filter" "southafrica" {
