@@ -242,6 +242,13 @@ resource "cloudflare_record" "tdarr" {
   type    = "A"
 }
 
+resource "cloudflare_record" "kube" {
+  zone_id = "70182c792b1a781051a72acfe20d5450"
+  name    = "kube"
+  value   = "192.168.88.112"
+  type    = "A"
+}
+
 
 # Firewall Rules
 resource "cloudflare_filter" "southafrica" {
