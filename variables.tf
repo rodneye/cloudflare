@@ -1,6 +1,6 @@
 variable "email" {
   description = "email for account"
-  default     = "rodnet-ellis@hotmail.com"
+  default     = "rodney-ellis@hotmail.com"
 }
 
 variable "account_id" {
