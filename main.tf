@@ -10,9 +10,9 @@ terraform {
 }
 
 provider "cloudflare" { 
-  email      = var.email
+#  email      = var.email
   api_token    = var.api_token
-  account_id = var.account_id
+#  account_id = var.account_id
 }
 
 
